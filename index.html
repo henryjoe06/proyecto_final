@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoxSync | Configuración de Toma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #f8fafc;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .main-content {
+        flex: 1;
+      }
+      .day-box {
+        transition: all 0.3s ease;
+        border: 1px solid #e2e8f0;
+      }
+      .active-sensor {
+        background-color: #fef08a !important;
+        border-color: #eab308 !important;
+        box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-white border-b border-slate-200 py-4 shadow-sm">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600 tracking-tight">BoxSync</h1>
+        <nav
+          class="space-x-6 text-sm font-medium text-slate-600 flex items-center"
+        >
+          <span>Dispositivo</span>
+          <a href="historial_de_la_app/index.html"
+            ><span>Historial App</span></a
+          >
+          <a
+            href="contactanos/index.html"
+            class="hover:text-blue-600 transition-colors"
+            ><span>Contáctanos</span></a
+          >
+          <a href="plan_de_suscripcion/index.html">
+            <span
+              class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full border border-blue-100"
+              >Suscripción Activa</span
+            >
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content max-w-7xl mx-auto w-full p-6">
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-4 space-y-6">
+          <section class="bg-slate-900 rounded-2xl p-6 text-white shadow-xl">
+            <h2
+              class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4"
+            >
+              Pantalla Integrada
+            </h2>
+            <div class="space-y-2">
+              <div class="text-3xl font-mono" id="clock">00:00:00</div>
+              <div class="text-slate-400 text-sm" id="date">
+                Cargando fecha...
+              </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-slate-800">
+              <p class="text-xs text-blue-400 font-bold mb-1 uppercase">
+                Próxima Toma Programada
+              </p>
+              <p class="text-lg font-medium text-white" id="next-dose-display">
+                Casilla 4 - 10:30 AM
+              </p>
+            </div>
+          </section>
+
+          <section
+            class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm"
+          >
+            <h2 class="font-bold text-slate-800 mb-4 text-lg">
+              Configurar Toma
+            </h2>
+            <div class="space-y-4">
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                  >Día del mes (1-31)</label
+                >
+                <input
+                  type="number"
+                  id="input-day"
+                  min="1"
+                  max="31"
+                  value="4"
+                  class="w-full p-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-400 uppercase mb-1"
+                  >Hora de la toma</label
+                >
+                <input
+                  type="time"
+                  id="input-time"
+                  value="10:30"
+                  class="w-full p-2 border rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"
+                />
+              </div>
+              <button
+                onclick="updateDose()"
+                class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition-all"
+              >
+                Actualizar y Activar Luz
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <div
+          class="col-span-12 lg:col-span-8 bg-white rounded-2xl border border-slate-200 shadow-sm p-8"
+        >
+          <div class="flex items-center justify-between mb-8">
+            <h2 class="text-xl font-bold text-slate-800">
+              Estado de Casillas (31 días)
+            </h2>
+            <div class="flex gap-4 text-xs font-bold uppercase text-slate-400">
+              <span class="flex items-center gap-1"
+                ><div
+                  class="w-2 h-2 bg-slate-100 border border-slate-300 rounded"
+                ></div>
+                Vacía</span
+              >
+              <span class="flex items-center gap-1"
+                ><div
+                  class="w-2 h-2 bg-white border border-slate-300 rounded"
+                ></div>
+                Con Medicación</span
+              >
+            </div>
+          </div>
+          <div class="grid grid-cols-7 gap-3" id="pill-grid"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-8">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500"
+      >
+        <div class="flex items-center gap-6">
+          <span>&copy; 2026 PillCalendar Startup</span>
+          <span>Configuración: Farmacia Autorizada</span>
+        </div>
+        <div class="flex gap-8">
+          <span class="flex items-center gap-2"
+            ><div class="w-2 h-2 bg-green-500 rounded-full"></div>
+            App Sincronizada</span
+          >
+          <span>Términos de Suscripción</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // RELOJ EN TIEMPO REAL
+      function updateClock() {
+        const now = new Date();
+        document.getElementById("clock").textContent = now.toLocaleTimeString(
+          "es-ES",
+          { hour12: false },
+        );
+        document.getElementById("date").textContent = now.toLocaleDateString(
+          "es-ES",
+          { day: "numeric", month: "long", year: "numeric" },
+        );
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+
+      // GENERACIÓN DEL CALENDARIO
+      const grid = document.getElementById("pill-grid");
+      for (let i = 1; i <= 31; i++) {
+        const day = document.createElement("div");
+        day.id = `day-${i}`;
+        day.className =
+          "day-box aspect-square rounded-xl flex flex-col items-center justify-center bg-white text-slate-400 font-bold hover:border-blue-300 cursor-default";
+        day.innerHTML = `<span class="text-[9px] uppercase font-normal opacity-60">Día</span><span class="text-lg">${i}</span>`;
+        grid.appendChild(day);
+      }
+
+      // LÓGICA DE CONFIGURACIÓN Y LUZ
+      let currentActiveDay = null;
+
+      function updateDose() {
+        const dayInput = document.getElementById("input-day").value;
+        const timeInput = document.getElementById("input-time").value;
+
+        // Validar que el día esté entre 1 y 31
+        if (dayInput < 1 || dayInput > 31) {
+          alert("Por favor, introduce un día válido (1-31)");
+          return;
+        }
+
+        // 1. Limpiar luz anterior
+        if (currentActiveDay) {
+          const prevTarget = document.getElementById(`day-${currentActiveDay}`);
+          prevTarget.classList.remove("active-sensor", "text-yellow-700");
+          prevTarget.classList.add("text-slate-400");
+        }
+
+        // 2. Actualizar pantalla del dispositivo
+        document.getElementById("next-dose-display").innerText =
+          `Casilla ${dayInput} - ${timeInput}`;
+
+        // 3. Encender la nueva casilla
+        const target = document.getElementById(`day-${dayInput}`);
+        target.classList.add("active-sensor", "text-yellow-700");
+        target.classList.remove("text-slate-400");
+
+        currentActiveDay = dayInput;
+
+        // Feedback visual
+        console.log(
+          `Configuración guardada: Día ${dayInput} a las ${timeInput}`,
+        );
+      }
+
+      // Activar por defecto la casilla 4 al cargar
+      updateDose();
+    </script>
+  </body>
+</html>

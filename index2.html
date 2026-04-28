@@ -36,6 +36,11 @@
         width: 100%;
         left: 0%;
         padding: 20px 0;
+        border-top: 3px solid black;
+      }
+      .div_footer_1{
+        display: flex;
+        gap: 40px;
       }
     </style>
   </head>
@@ -50,9 +55,13 @@
     </main>
     <footer class="footer">
         <div>
-            <div>
+            <div class="div_footer_1">
                 <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
                 <span>Configuración: Farmacia Autorizada</span>
+            </div>
+            <div>
+                <span>App Sincorniza</span>
+                <span id="footer-clock-original">00:00:00</span>
             </div>
         </div>
     </footer>

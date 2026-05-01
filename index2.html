@@ -10,70 +10,113 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        margin: 0;
       }
       /*Header*/
-      .header{
-
+      .header {
+        background-color: #ffffff;
+        border-top: 2rem;
+        display: flex;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0%;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
       }
-      .div{
-
+      .div-contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
       }
-      .h1{
-
+      .div-titulo {
+        color: rgb(37, 99, 235);
       }
-      .nav{
-
+      .nav-menu {
+        display: flex;
+        gap: 25px;
+      }
+      .lista-menu {
+        list-style: none;
+      }
+      .a-subrayado {
+        text-decoration: none;
+        color: #1782ee;
+        cursor: pointer;
+      }
+      .a-subrayado:hover {
+        color: #f50808;
       }
       /*main*/
-      .main{
+      .main {
         background-color: red;
       }
       /*footer*/
-      .footer{
-        background-color: gray;
-        position: fixed;
+      .footer {
+        background-color: #ffffff;
+        position: absolute;
         bottom: 0;
         width: 100%;
         left: 0%;
-        padding: 20px 0;
-        border-top: 3px solid black;
+        padding: 32px 0;
+        border-top: 2rem;
+        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
       }
-      .div_footer{
+      .div_footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
-      .div_footer_1{
+      .div_footer_1 {
         display: flex;
         gap: 40px;
       }
-      .div_footer_2{
+      .div_footer_2 {
         display: flex;
         gap: 40px;
-
       }
     </style>
   </head>
   <body>
     <header class="header">
-        <div class="div"></div>
-        <nav class="nav"></nav>
-
+      <div class="div-contenedor">
+        <div class="div-titulo">
+          <h2 class="">BoxSync</h2>
+        </div>
+        <nav class="nav-menu">
+          <li class="lista-menu">
+            <a href="index2.html" class="a-subrayado">Dispositivo</a>
+          </li>
+          <li class="lista-menu">
+            <a href="" class="a-subrayado">Historial App</a>
+          </li>
+          <li class="lista-menu">
+            <a href="" class="a-subrayado">Contáctanos</a>
+          </li>
+          <li class="lista-menu">
+            <a href="" class="a-subrayado">Base de Datos</a>
+          </li>
+          <li class="lista-menu">
+            <a href="" class="a-subrayado">Suscripción Activa</a>
+          </li>
+        </nav>
+      </div>
+      <nav class=""></nav>
     </header>
     <main class="main">
-        <div></div>
+      <div></div>
     </main>
     <footer class="footer">
-        <div class="div_footer">
-            <div class="div_footer_1">
-                <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
-                <span>Configuración: Farmacia Autorizada</span>
-            </div>
-            <div class="div_footer_2">
-                <span>App Sincorniza</span>
-                <span id="footer-clock-original">00:00:00</span>
-            </div>
+      <div class="div_footer">
+        <div class="div_footer_1">
+          <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
+          <span>Configuración: Farmacia Autorizada</span>
         </div>
+        <div class="div_footer_2">
+          <span>App Sincorniza</span>
+          <span id="footer-clock-original">00:00:00</span>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

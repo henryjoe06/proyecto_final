@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxSync</title>
+    <head>
+        <style>
+          body {
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+          }
+          /*Header*/
+          .header {
+            background-color: #ffffff;
+            display: flex;
+            top: 0;
+            width: 100%;
+            left: 0%;
+            padding: 15px 40px;
+            align-items: center;
+            box-shadow: inset 0 5px 1.5cm rgba(0, 0, 0, 0.5);
+          }
+          .div-contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+          }
+          .nav-menu {
+            display: flex;
+            gap: 35px;
+            justify-content: left;
+          }
+          .div-titulo {
+            color: rgb(37, 99, 235);
+            font-weight: bold;
+          }
+          .div-menu {
+            display: flex;
+            gap: 25px;
+            position: absolute;
+            right: 40px;
+            justify-content: center;
+            align-items: center;
+          }
+          .lista-menu {
+            list-style: none;
+          }
+          .a-subrayado {
+            text-decoration: none;
+            cursor: pointer;
+            color: gray;
+          }
+          .a-subrayado:hover {
+            color: #007bff;
+          }
+          .boton-suscripcion {
+            background-color: #eff6ff;
+            border: #007bff solid 1px;
+            border-radius: 1.5rem;
+            padding: 5px 15px;
+            font-weight: 700;
+          }
+          .boton-base-de-datos {
+            border: #007bff solid 1px;
+            border-radius: 0.5rem;
+            color: #f88400;
+            padding: 5px 15px;
+          }
+          /*main*/
+              .cuadro-de-suscripcion {
+                background-color: #ffffff;
+                width: 500px;
+                height: 470px;
+                text-align: center;
+                margin: 20px auto;
+                border: 1px solid #007bff;
+                border-radius: 0.5rem;
+                box-shadow: 0 5px 1.5cm rgba(0, 0, 0, 0.5);
+            }
+          /*footer*/
+          .footer {
+            position: fixed;
+            background-color: #ffffff;
+            bottom: 0;
+            width: 100%;
+            left: 0%;
+            padding: 32px 0;
+            border-top: 2rem;
+            box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
+          }
+          .div_footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .div_footer_1 {
+            display: flex;
+            gap: 40px;
+          }
+          .div_footer_2 {
+            display: flex;
+            gap: 40px;
+          }
+        </style>
+      </head>
+      <body>
+        <header class="header">
+          <div class="div-titulo">
+            <h1 class="">BoxSync</h1>
+          </div>
+          <div style="margin-right: 2rem;">
+            <h3 style="color: gray">|Plan de Suscripción</h3>
+          </div>
+          <div class="div-menu">
+            <nav class="nav-menu">
+              <li class="lista-menu">
+                <a
+                  href="../index2.html"
+                  class="a-subrayado"
+                  >Dispositivo</a
+                >
+              </li>
+              <li class="lista-menu">
+                <a href="../historial_de_la_app2/index.html" class="a-subrayado"
+                  >Historial App</a
+                >
+              </li>
+              <li class="lista-menu">
+                <a href="" class="a-subrayado">Contáctanos</a>
+              </li>
+              <div class="boton-base-de-datos">
+                <li class="lista-menu">
+                  <a href="../base_de_datos2/index.html" class="a-subrayado">Base de Datos</a>
+                </li>
+              </div>
+              <div class="boton-suscripcion">
+                <li class="lista-menu">
+                  <a href="../plan_de_suscripcion2/index.html" class="a-subrayado" style="color: #1d4ed8"
+                    >Suscripción Activa</a
+                  >
+                </li>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <main>
+          <h2 style="text-align: center; margin-top:">Plan de Suscripción Activa</h2>
+          <div style="width: 500px; height: 470px; text-align: center; margin: 20px auto; ">
+            <p>
+            ¡Gracias por ser parte de BoxSync! 
+          </p>
+          <p>
+            Tu suscripción está activa y lista para brindarte la mejor experiencia de sincronización de datos. Disfruta de todas las funciones y beneficios que ofrecemos para mantener tus dispositivos conectados y tus datos seguros.
+          </p>
+          </div>
+          <div class="cuadro-de-suscripcion"></div>
+          <div class="cuadro-de-suscripcion"></div>
+          <div class="cuadro-de-suscripcion"></div>
+          <div class="div-plan-de-suscripcion" style="width: 500px; height: 470px; text-align: center; margin: 20px auto; ">
+            <p>
+              Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos. Estamos aquí para ayudarte en cada paso del camino.
+            </p>
+            <p>
+              ¡Gracias por confiar en BoxSync!
+            </p>
+
+          </div>
+        </main>
+        <footer class="footer">
+          <div class="div_footer">
+            <div class="div_footer_1">
+              <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
+              <span>Configuración: Farmacia Autorizada</span>
+            </div>
+            <div class="div_footer_2">
+              <span>App Sincorniza</span>
+              <span id="footer-clock-original">00:00:00</span>
+            </div>
+          </div>
+        </footer>
+      </body>
+    </html>
+  </body>
+</html>

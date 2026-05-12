@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Control | Base de Datos BoxSync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #f8fafc;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .main-content {
+        flex: 1;
+      }
+      .status-pill {
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .status-ok {
+        background-color: #dcfce7;
+        text-color: #166534;
+      }
+      .status-error {
+        background-color: #fee2e2;
+        text-color: #991b1b;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-white border-b border-slate-200 py-4 shadow-sm">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600 tracking-tight">
+          BoxSync
+          <span class="text-slate-400 font-light text-sm ml-2"
+            >| Database Admin</span
+          >
+        </h1>
+        <nav class="space-x-6 text-sm font-medium text-slate-600">
+          <a href="../index.html" class="hover:text-blue-600"
+            >Volver al Dispositivo</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content max-w-7xl mx-auto w-full p-8">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-slate-800">
+          Gestión de Usuarios y Tratamientos
+        </h2>
+        <p class="text-slate-500 text-sm">
+          Base de datos centralizada para farmacias autorizadas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <p class="text-slate-400 text-xs font-bold uppercase mb-1">
+            Dispositivos Activos
+          </p>
+          <p class="text-3xl font-bold text-slate-800">1,284</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <p class="text-slate-400 text-xs font-bold uppercase mb-1">
+            Alertas Hoy
+          </p>
+          <p class="text-3xl font-bold text-red-500">12</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <p class="text-slate-400 text-xs font-bold uppercase mb-1">
+            Sincronización
+          </p>
+          <p class="text-3xl font-bold text-green-500">99.8%</p>
+        </div>
+      </div>
+
+      <div
+        class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden"
+      >
+        <table class="w-full text-left">
+          <thead class="bg-slate-50 border-b border-slate-200">
+            <tr>
+              <th
+                class="px-6 py-4 text-[10px] font-black text-slate-400 uppercase"
+              >
+                ID Usuario
+              </th>
+              <th
+                class="px-6 py-4 text-[10px] font-black text-slate-400 uppercase"
+              >
+                Paciente
+              </th>
+              <th
+                class="px-6 py-4 text-[10px] font-black text-slate-400 uppercase"
+              >
+                Medicamento Principal
+              </th>
+              <th
+                class="px-6 py-4 text-[10px] font-black text-slate-400 uppercase"
+              >
+                Estado Sensor
+              </th>
+              <th
+                class="px-6 py-4 text-[10px] font-black text-slate-400 uppercase"
+              >
+                Última Toma
+              </th>
+              <th
+                class="px-6 py-4 text-[10px] font-black text-slate-400 uppercase"
+              >
+                Acción
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="px-6 py-4 font-mono text-xs text-blue-600">
+                #BX-9021
+              </td>
+              <td class="px-6 py-4 text-sm font-bold text-slate-700">
+                Juan Pérez García
+              </td>
+              <td class="px-6 py-4 text-sm text-slate-500">Enalapril 20mg</td>
+              <td class="px-6 py-4">
+                <span class="status-pill status-ok text-green-700"
+                  >Correcto</span
+                >
+              </td>
+              <td class="px-6 py-4 text-xs text-slate-500">Hoy, 10:30 AM</td>
+              <td class="px-6 py-4">
+                <button class="text-blue-600 font-bold text-xs hover:underline">
+                  Configurar
+                </button>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="px-6 py-4 font-mono text-xs text-blue-600">
+                #BX-4412
+              </td>
+              <td class="px-6 py-4 text-sm font-bold text-slate-700">
+                María López Vila
+              </td>
+              <td class="px-6 py-4 text-sm text-slate-500">Metformina 850mg</td>
+              <td class="px-6 py-4">
+                <span class="status-pill status-error text-red-700"
+                  >Falta Toma</span
+                >
+              </td>
+              <td class="px-6 py-4 text-xs text-slate-500">Ayer, 21:00 PM</td>
+              <td class="px-6 py-4">
+                <button class="text-blue-600 font-bold text-xs hover:underline">
+                  Configurar
+                </button>
+              </td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="px-6 py-4 font-mono text-xs text-blue-600">
+                #BX-7723
+              </td>
+              <td class="px-6 py-4 text-sm font-bold text-slate-700">
+                Ricardo Gómez
+              </td>
+              <td class="px-6 py-4 text-sm text-slate-500">Atorvastatina</td>
+              <td class="px-6 py-4">
+                <span class="status-pill status-ok text-green-700"
+                  >Correcto</span
+                >
+              </td>
+              <td class="px-6 py-4 text-xs text-slate-500">Hoy, 08:15 AM</td>
+              <td class="px-6 py-4">
+                <button class="text-blue-600 font-bold text-xs hover:underline">
+                  Configurar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12 py-8">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500"
+      >
+        <div class="flex items-center gap-6">
+          <span>&copy; 2026 PillCalendar Startup</span>
+          <span>Acceso: Servidor de Datos Farmacia</span>
+        </div>
+        <div class="flex gap-8">
+          <span class="flex items-center gap-2">
+            <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            Base de Datos Conectada
+          </span>
+          <span id="live-clock">10:04:12</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function updateClock() {
+        const now = new Date();
+        document.getElementById("live-clock").textContent =
+          now.toLocaleTimeString("es-ES", { hour12: false });
+      }
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>

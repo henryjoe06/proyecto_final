@@ -3,209 +3,149 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto | BoxSync</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>BoxSync</title>
     <style>
       body {
         background-color: #f8fafc;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        height: 100%;
+        width: 100%;
+        margin: 0;
       }
-      .main-content {
-        flex: 1;
+      /*Header*/
+      .header {
+        background-color: #ffffff;
+        display: flex;
+        top: 0;
+        width: 100%;
+        left: 0%;
+        padding: 15px 40px;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: inset 0 5px 1.5cm rgba(0, 0, 0, 0.5);
       }
-      input,
-      textarea {
-        border: 1px solid #e2e8f0;
-        transition: all 0.2s;
+      .div-contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
       }
-      input:focus,
-      textarea:focus {
-        border-color: #2563eb;
-        outline: none;
-        ring: 2px;
-        ring-color: #dbeafe;
+      .nav-menu {
+        display: flex;
+        gap: 35px;
+        justify-content: left;
+      }
+      .div-titulo {
+        color: rgb(37, 99, 235);
+        font-weight: bold;
+      }
+      .div-menu {
+        display: flex;
+        gap: 25px;
+        position: absolute;
+        right: 40px;
+        justify-content: center;
+        align-items: center;
+      }
+      .lista-menu {
+        list-style: none;
+      }
+      .a-subrayado {
+        text-decoration: none;
+        cursor: pointer;
+        color: gray;
+      }
+      .a-subrayado:hover {
+        color: #007bff;
+      }
+      .boton-suscripcion {
+        background-color: #eff6ff;
+        border: #007bff solid 1px;
+        border-radius: 1.5rem;
+        padding: 5px 15px;
+        font-weight: 700;
+      }
+      .boton-base-de-datos {
+        border: #007bff solid 1px;
+        border-radius: 0.5rem;
+        color: #f88400;
+        padding: 5px 15px;
+      }
+      /*Main*/
+      .main {
+        width: 100%;
+        background-color: #ffffff;
+      }
+      /*footer*/
+      .footer {
+        position: fixed;
+        background-color: #ffffff;
+        bottom: 0;
+        width: 100%;
+        left: 0%;
+        padding: 32px 0;
+        border-top: 2rem;
+        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
+      }
+      .div_footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 30px;
+      }
+      .div_footer_1 {
+        display: flex;
+        gap: 40px;
+      }
+      .div_footer_2 {
+        display: flex;
+        gap: 40px;
       }
     </style>
   </head>
   <body>
-    <header class="bg-white border-b border-slate-200 py-4 shadow-sm">
-      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <h1 class="text-2xl font-bold text-blue-600 tracking-tight">
-            BoxSync
-          </h1>
-          <span
-            class="text-xs font-medium text-slate-400 border-l pl-2 ml-2 uppercase tracking-widest"
-            >Contacto</span
-          >
-        </div>
-        <nav class="space-x-6 text-sm font-medium text-slate-600">
-          <a href="../index.html" class="hover:text-blue-600">Panel</a>
-          <a href="../planes/index.html" class="hover:text-blue-600">Planes</a>
-          <a
-            href="../historial_de_la_app/index.html"
-            class="hover:text-blue-600"
-            >Historial</a
-          >
+    <header class="header">
+      <div class="div-titulo">
+        <h1 class="">BoxSync</h1>
+      </div>
+      <div class="div-menu">
+        <nav class="nav-menu">
+          <li class="lista-menu">
+            <a
+              href="../index.html"
+              class="a-subrayado"
+              style="color: #000000; font-weight: 1000"
+              >Dispositivo</a
+            >
+          </li>
+          <li class="lista-menu">
+            <a href="../historial_de_la_app/index.html" class="a-subrayado"
+              >Historial App</a
+            >
+          </li>
+          <li class="lista-menu">
+            <a href="index.html" class="a-subrayado">Contáctanos</a>
+          </li>
+          <div class="boton-base-de-datos">
+            <li class="lista-menu">
+              <a href="../base_de_datos/index.html" class="a-subrayado"
+                >Base de Datos</a
+              >
+            </li>
+          </div>
+          <div class="boton-suscripcion">
+            <li class="lista-menu">
+              <a
+                href="../plan_de_suscripcion/index.html"
+                class="a-subrayado"
+                style="color: #1d4ed8"
+                >Suscripción Activa</a
+              >
+            </li>
+          </div>
         </nav>
       </div>
     </header>
-
-    <main class="main-content max-w-5xl mx-auto w-full p-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <div class="space-y-8">
-          <div>
-            <h2 class="text-4xl font-extrabold text-slate-800 mb-4">
-              Hablemos
-            </h2>
-            <p class="text-slate-500 text-lg">
-              ¿Tienes dudas sobre el funcionamiento de los sensores o quieres
-              implementar BoxSync en tu farmacia?
-            </p>
-          </div>
-
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="bg-blue-100 p-3 rounded-lg text-blue-600">
-                <svg
-                  class="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-800">Email</h4>
-                <p class="text-slate-500 text-sm">soporte@boxsync.com</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="bg-blue-100 p-3 rounded-lg text-blue-600">
-                <svg
-                  class="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  ></path>
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-800">Ubicación</h4>
-                <p class="text-slate-500 text-sm">Badalona, España</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xl">
-          <form action="#" class="space-y-4">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label
-                  class="block text-xs font-bold text-slate-400 uppercase mb-2"
-                  >Nombre</label
-                >
-                <input
-                  type="text"
-                  placeholder="Tu nombre"
-                  class="w-full px-4 py-3 rounded-xl bg-slate-50 text-sm"
-                />
-              </div>
-              <div>
-                <label
-                  class="block text-xs font-bold text-slate-400 uppercase mb-2"
-                  >Asunto</label
-                >
-                <select class="w-full px-4 py-3 rounded-xl bg-slate-50 text-sm">
-                  <option>Soporte Técnico</option>
-                  <option>Información Ventas</option>
-                  <option>Farmacias</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label
-                class="block text-xs font-bold text-slate-400 uppercase mb-2"
-                >Correo Electrónico</label
-              >
-              <input
-                type="email"
-                placeholder="email@ejemplo.com"
-                class="w-full px-4 py-3 rounded-xl bg-slate-50 text-sm"
-              />
-            </div>
-            <div>
-              <label
-                class="block text-xs font-bold text-slate-400 uppercase mb-2"
-                >Mensaje</label
-              >
-              <textarea
-                rows="4"
-                placeholder="¿En qué podemos ayudarte?"
-                class="w-full px-4 py-3 rounded-xl bg-slate-50 text-sm"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-shadow shadow-lg shadow-blue-200 mt-4"
-            >
-              Enviar Mensaje
-            </button>
-          </form>
-        </div>
-      </div>
-    </main>
-
-    <footer class="bg-white border-t border-slate-200 mt-12 py-8">
-      <div
-        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500"
-      >
-        <div class="flex items-center gap-6">
-          <span>&copy; 2026 PillCalendar Startup</span>
-          <span class="font-mono text-blue-600" id="live-clock">11:48:00</span>
-        </div>
-        <div class="flex gap-4 items-center">
-          <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-          <span>Atención al cliente activa</span>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      function updateClock() {
-        const now = new Date();
-        const timeStr = now.toLocaleTimeString("es-ES", {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false,
-        });
-        document.getElementById("live-clock").textContent = timeStr;
-      }
-      setInterval(updateClock, 1000);
-      updateClock();
-    </script>
   </body>
 </html>

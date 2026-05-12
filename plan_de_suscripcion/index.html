@@ -1,263 +1,197 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoxSync</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background-color: #f8fafc;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-      .main-content {
-        flex: 1;
-      }
-      .plan-card {
-        transition: all 0.3s ease;
-      }
-      .plan-card:hover {
-        transform: translateY(-5px);
-      }
-    </style>
-  </head>
-  <body>
-    <header class="bg-white border-b border-slate-200 py-4 shadow-sm">
-      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <h1 class="text-2xl font-bold text-blue-600 tracking-tight">
-            BoxSync
-          </h1>
-          <span
-            class="text-xs font-medium text-slate-400 border-l pl-2 ml-2 uppercase tracking-widest"
-            >Suscripciones</span
-          >
-        </div>
-        <nav class="space-x-6 text-sm font-medium text-slate-600">
-          <a href="../index.html" class="hover:text-blue-600"
-            >Panel Dispositivo</a
-          >
-          <a
-            href="../historial_de_la_app/index.html"
-            class="hover:text-blue-600"
-            >Historial</a
-          >
-        </nav>
-      </div>
-    </header>
+    <head>
+        <style>
+          body {
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+          }
+          /*Header*/
+          .header {
+            background-color: #ffffff;
+            display: flex;
+            top: 0;
+            width: 100%;
+            left: 0%;
+            padding: 15px 40px;
+            align-items: center;
+            box-shadow: inset 0 5px 1.5cm rgba(0, 0, 0, 0.5);
+          }
+          .div-contenedor {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+          }
+          .nav-menu {
+            display: flex;
+            gap: 35px;
+            justify-content: left;
+          }
+          .div-titulo {
+            color: rgb(37, 99, 235);
+            font-weight: bold;
+          }
+          .div-menu {
+            display: flex;
+            gap: 25px;
+            position: absolute;
+            right: 40px;
+            justify-content: center;
+            align-items: center;
+          }
+          .lista-menu {
+            list-style: none;
+          }
+          .a-subrayado {
+            text-decoration: none;
+            cursor: pointer;
+            color: gray;
+          }
+          .a-subrayado:hover {
+            color: #007bff;
+          }
+          .boton-suscripcion {
+            background-color: #eff6ff;
+            border: #007bff solid 1px;
+            border-radius: 1.5rem;
+            padding: 5px 15px;
+            font-weight: 700;
+          }
+          .boton-base-de-datos {
+            border: #007bff solid 1px;
+            border-radius: 0.5rem;
+            color: #f88400;
+            padding: 5px 15px;
+          }
+          /*main*/
+          main{
+            width: 100%;
+            height: 100%;
+          }
+            .cuadro-de-suscripcion {
+                background-color: #ffffff;
+                width: 350px;
+                height: 370px;
+                margin: 10px ;
+                border: 1px solid #007bff;
+                border-radius: 0.5rem;
 
-    <main class="main-content max-w-6xl mx-auto w-full p-8">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-extrabold text-slate-800 mb-4">
-          Elige tu plan de cuidado inteligente
-        </h2>
-        <p class="text-slate-500 max-w-2xl mx-auto">
-          Gestiona tu salud con BoxSync. Todos los planes incluyen la
-          sincronización con el pastillero físico y alertas mediante sensores.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div
-          class="plan-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col"
-        >
-          <h3 class="font-bold text-slate-800 text-xl mb-2">Básico</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-black text-slate-800">4,99€</span>
-            <span class="text-slate-400 text-sm">/mes</span>
+          }
+            .colocar-plan-de-suscripcion {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                align-items: center;
+            }
+          /*footer*/
+          .footer {
+            position: fixed;
+            background-color: #ffffff;
+            bottom: 0;
+            width: 100%;
+            left: 0%;
+            padding: 32px 0;
+            border-top: 2rem;
+            box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
+          }
+          .div_footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .div_footer_1 {
+            display: flex;
+            gap: 40px;
+          }
+          .div_footer_2 {
+            display: flex;
+            gap: 40px;
+          }
+        </style>
+      </head>
+      <body>
+        <header class="header">
+          <div class="div-titulo">
+            <h1 class="">BoxSync</h1>
           </div>
-          <ul class="space-y-4 mb-8 flex-grow">
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <svg
-                class="w-5 h-5 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg>
-              Sincronización App-Pastillero
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <svg
-                class="w-5 h-5 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg>
-              Alertas por notificación
-            </li>
-          </ul>
-          <button
-            class="w-full border-2 border-blue-600 text-blue-600 font-bold py-3 rounded-xl hover:bg-blue-50 transition-colors"
-          >
-            Seleccionar
-          </button>
-        </div>
-
-        <div
-          class="plan-card bg-white p-8 rounded-3xl border-2 border-blue-600 shadow-xl relative flex flex-col scale-105"
-        >
-          <div
-            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase"
-          >
-            Más Popular
+          <div style="margin-right: 2rem;">
+            <h3 style="color: gray">|Plan de Suscripción</h3>
           </div>
-          <h3 class="font-bold text-slate-800 text-xl mb-2">Familiar</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-black text-slate-800">9,99€</span>
-            <span class="text-slate-400 text-sm">/mes</span>
+          <div class="div-menu">
+            <nav class="nav-menu">
+              <li class="lista-menu">
+                <a
+                  href="../index.html"
+                  class="a-subrayado"
+                  >Dispositivo</a
+                >
+              </li>
+              <li class="lista-menu">
+                <a href="../historial_de_la_app/index.html" class="a-subrayado"
+                  >Historial App</a
+                >
+              </li>
+              <li class="lista-menu">
+                <a href="../contactanos/index.html" class="a-subrayado">Contáctanos</a>
+              </li>
+              <div class="boton-base-de-datos">
+                <li class="lista-menu">
+                  <a href="../base_de_datos/index.html" class="a-subrayado">Base de Datos</a>
+                </li>
+              </div>
+              <div class="boton-suscripcion">
+                <li class="lista-menu">
+                  <a href="../plan_de_suscripcion/index.html" class="a-subrayado" style="color: #1d4ed8"
+                    >Suscripción Activa</a
+                  >
+                </li>
+              </div>
+            </nav>
           </div>
-          <ul class="space-y-4 mb-8 flex-grow">
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <svg
-                class="w-5 h-5 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg>
-              Todo lo del plan Básico
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <svg
-                class="w-5 h-5 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg>
-              Historial para 3 familiares
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <svg
-                class="w-5 h-5 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg>
-              Avisos de error en tiempo real
-            </li>
-          </ul>
-          <button
-            class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition-shadow shadow-lg shadow-blue-200"
-          >
-            Empezar ahora
-          </button>
-        </div>
-
-        <div
-          class="plan-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col"
-        >
-          <h3 class="font-bold text-slate-800 text-xl mb-2">Médico</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-black text-slate-800">19,99€</span>
-            <span class="text-slate-400 text-sm">/mes</span>
+        </header>
+        <main class="main">
+          <h2 style="text-align: center; margin-top: 20px;">Plan de Suscripción Activa</h2>
+          <div style="width: 500px; text-align: center; margin: 20px auto; ">
+          <p>
+            Tu suscripción está activa y lista para brindarte la mejor experiencia de sincronización de datos. Disfruta de todas las funciones y beneficios que ofrecemos para mantener tus dispositivos conectados y tus datos seguros.
+          </p>
           </div>
-          <ul class="space-y-4 mb-8 flex-grow">
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <svg
-                class="w-5 h-5 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg>
-              Informe mensual para el doctor
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600">
-              <svg
-                class="w-5 h-5 text-green-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg>
-              Soporte técnico prioritario
-            </li>
-          </ul>
-          <button
-            class="w-full border-2 border-slate-800 text-slate-800 font-bold py-3 rounded-xl hover:bg-slate-50 transition-colors"
-          >
-            Contactar
-          </button>
-        </div>
-      </div>
-    </main>
+          <div class="colocar-plan-de-suscripcion">
+            <div class="cuadro-de-suscripcion";></div>
+            <div class="cuadro-de-suscripcion"></div>
+            <div class="cuadro-de-suscripcion"></div>
+          </div>
+          <div class="div-plan-de-suscripcion" style="width: 500px; height: 470px; text-align: center; margin: 20px auto; ">
+            <p>
+              Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos. Estamos aquí para ayudarte en cada paso del camino.
+            </p>
+            <p>
+              ¡Gracias por confiar en BoxSync!
+            </p>
 
-    <footer class="bg-white border-t border-slate-200 mt-12 py-8">
-      <div
-        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500"
-      >
-        <div class="flex items-center gap-6">
-          <span>&copy; 2026 PillCalendar Startup</span>
-          <span class="text-slate-300">|</span>
-          <span class="font-mono text-blue-600" id="live-clock">10:25:00</span>
-        </div>
-        <div class="flex gap-8 italic">
-          Precios con IVA incluido para España
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      function updateClock() {
-        const now = new Date();
-        const timeStr = now.toLocaleTimeString("es-ES", {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false,
-        });
-        document.getElementById("live-clock").textContent = timeStr;
-      }
-      setInterval(updateClock, 1000);
-      updateClock();
-    </script>
+          </div>
+        </main>
+        <footer class="footer">
+          <div class="div_footer">
+            <div class="div_footer_1">
+              <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
+              <span>Configuración: Farmacia Autorizada</span>
+            </div>
+            <div class="div_footer_2">
+              <span>App Sincorniza</span>
+              <span id="footer-clock-original">00:00:00</span>
+            </div>
+          </div>
+        </footer>
+      </body>
+    </html>
   </body>
 </html>

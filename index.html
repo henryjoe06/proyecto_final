@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BoxSync</title>
+<<<<<<< HEAD
     <link rel="icon" type="image/x-icon" href="img/imagen-logo2-web.png" />
 
+=======
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
     <style>
       body {
         background-color: #f8fafc;
         display: flex;
         flex-direction: column;
+<<<<<<< HEAD
         min-height: 100vh;
+=======
+        height: 100%;
+        width: 100%;
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
         margin: 0;
       }
       /*Header*/
@@ -20,6 +28,7 @@
         display: flex;
         top: 0;
         width: 100%;
+<<<<<<< HEAD
         left: 0%;
         padding: 15px 40px;
         align-items: center;
@@ -124,6 +133,126 @@
       }
       /*footer*/
       .footer {
+=======
+        height: 100px;
+        left: 0%;
+        padding: 15px 30px;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: inset 0 5px 1.5cm rgba(0, 0, 0, 0.5);
+        /* Ajuste 1: Evita que el padding ensanche la barra */
+        box-sizing: border-box;
+      }
+      .div-contenedor {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .nav-menu {
+        display: flex;
+        gap: 35px;
+        justify-content: left;
+        /* Ajuste 2: Limpia espacios por defecto del navegador */
+        margin: 0;
+        padding: 0;
+        align-items: center;
+      }
+      .div-titulo {
+        color: rgb(37, 99, 235);
+        font-weight: bold;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+      }
+      .div-menu {
+        display: flex;
+        gap: 25px;
+        /* Ajuste 3: Eliminado 'position: absolute' y 'right' para que se alinee solo */
+        justify-content: center;
+        align-items: center;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+      }
+      .lista-menu {
+        list-style: none;
+      }
+      .a-subrayado {
+        text-decoration: none;
+        cursor: pointer;
+        color: gray;
+      }
+      .a-subrayado:hover {
+        color: #007bff;
+      }
+      .boton-suscripcion {
+        background-color: #eff6ff;
+        border: #007bff solid 1px;
+        border-radius: 1.5rem;
+        padding: 5px 15px;
+        font-weight: 700;
+      }
+      .boton-base-de-datos {
+        border: #007bff solid 1px;
+        border-radius: 0.5rem;
+        color: #f88400;
+        padding: 5px 15px;
+      }
+      /*main*/
+      .main {
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+      }
+      .calendario {
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        border: #000000 solid 1px;
+        font-family: sans-serif;
+        padding: 30px;
+        width: 500px;
+      }
+      .numeros-calendario {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid #394e79;
+        background-color: #c36767;
+        width: 100px;
+        height: 100px;
+      }
+      .colocar-numero-calendario {
+        grid-template-columns: repeat(9, 5fr);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      /*footer*/
+      .footer {
+        position: fixed;
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
         background-color: #ffffff;
         bottom: 0;
         width: 100%;
@@ -136,6 +265,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+<<<<<<< HEAD
+=======
+        margin-right: 30px;
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
       }
       .div_footer_1 {
         display: flex;
@@ -150,10 +283,17 @@
   <body>
     <header class="header">
       <div class="div-titulo">
+<<<<<<< HEAD
         <h1 class="">BoxSync</h1>
       </div>
       <div>
         <h3 style="color: gray">|Dispositivo</h3>
+=======
+        <h1>BoxSync</h1>
+      </div>
+      <div style="margin-right: 57rem; color: gray; margin-top: 7px;">
+        <h3>|Dispositivo</h3>
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
       </div>
       <div class="div-menu">
         <nav class="nav-menu">
@@ -171,17 +311,31 @@
             >
           </li>
           <li class="lista-menu">
+<<<<<<< HEAD
             <a href="" class="a-subrayado">Contáctanos</a>
           </li>
           <div class="boton-base-de-datos">
             <li class="lista-menu">
               <a href="" class="a-subrayado">Base de Datos</a>
+=======
+            <a href="contactanos/index.html" class="a-subrayado">Contáctanos</a>
+          </li>
+          <div class="boton-base-de-datos">
+            <li class="lista-menu">
+              <a href="base_de_datos/index.html" class="a-subrayado"
+                >Base de Datos</a
+              >
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
             </li>
           </div>
           <div class="boton-suscripcion">
             <li class="lista-menu">
               <a
+<<<<<<< HEAD
                 href="plan_de_suscripcion2/index.html"
+=======
+                href="plan_de_suscripcion/index.html"
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
                 class="a-subrayado"
                 style="color: #1d4ed8"
                 >Suscripción Activa</a
@@ -193,6 +347,7 @@
     </header>
     <main class="main">
       <section class="calendario">
+<<<<<<< HEAD
         <div class="titulo-calendario">
           <h2>Configuración del Calendario</h2>
           <div class="cuadro-pendiente"></div>
@@ -229,16 +384,61 @@
         <div class="numeros-calendario">29</div>
         <div class="numeros-calendario">30</div>
         <div class="numeros-calendario">31</div>
+=======
+        <div>
+          <h1>Configuración Calendario</h1>
+        </div>
+        <div class="colocar-numero-calendario">
+          <div class="numeros-calendario">1</div>
+          <div class="numeros-calendario">2</div>
+          <div class="numeros-calendario">3</div>
+          <div class="numeros-calendario">4</div>
+          <div class="numeros-calendario">5</div>
+          <div class="numeros-calendario">6</div>
+          <div class="numeros-calendario">7</div>
+          <div class="numeros-calendario">8</div>
+          <div class="numeros-calendario">9</div>
+          <div class="numeros-calendario">10</div>
+          <div class="numeros-calendario">11</div>
+          <div class="numeros-calendario">12</div>
+          <div class="numeros-calendario">13</div>
+          <div class="numeros-calendario">14</div>
+          <div class="numeros-calendario">15</div>
+          <div class="numeros-calendario">16</div>
+          <div class="numeros-calendario">17</div>
+          <div class="numeros-calendario">18</div>
+          <div class="numeros-calendario">19</div>
+          <div class="numeros-calendario">20</div>
+          <div class="numeros-calendario">21</div>
+          <div class="numeros-calendario">22</div>
+          <div class="numeros-calendario">23</div>
+          <div class="numeros-calendario">24</div>
+          <div class="numeros-calendario">25</div>
+          <div class="numeros-calendario">26</div>
+          <div class="numeros-calendario">27</div>
+          <div class="numeros-calendario">28</div>
+          <div class="numeros-calendario">29</div>
+          <div class="numeros-calendario">30</div>
+          <div class="numeros-calendario">31</div>
+        </div>
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
       </section>
     </main>
     <footer class="footer">
       <div class="div_footer">
         <div class="div_footer_1">
+<<<<<<< HEAD
           <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
+=======
+          <span style="margin-left: 20px"
+            >&copy; 2023 BoxSync. Todos los derechos reservados.</span
+          >
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
           <span>Configuración: Farmacia Autorizada</span>
         </div>
         <div class="div_footer_2">
           <span>App Sincorniza</span>
+<<<<<<< HEAD
           <span id="footer-reloj">00:00:00</span>
         </div>
       </div>
@@ -258,5 +458,11 @@
       }
       crearreloj();
     </script>
+=======
+          <span id="footer-clock-original">00:00:00</span>
+        </div>
+      </div>
+    </footer>
+>>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
   </body>
 </html>

@@ -1,27 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoxSync</title>
-</head>
-<body>
-    
-</body>
-</html>
-=======
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BoxSync</title>
+    <link rel="icon" type="image/x-icon" href="../img/imagen-logo2-web.png" />
     <style>
       body {
         background-color: #f8fafc;
         display: flex;
         flex-direction: column;
-        height: 100%;
-        width: 100%;
+        min-height: 100vh;
         margin: 0;
       }
       /*Header*/
@@ -32,9 +21,9 @@
         width: 100%;
         left: 0%;
         padding: 15px 40px;
-        justify-content: space-between;
         align-items: center;
         box-shadow: inset 0 5px 1.5cm rgba(0, 0, 0, 0.5);
+        box-sizing: border-box; /* Asegura que el padding no deforme el ancho */
       }
       .div-contenedor {
         display: flex;
@@ -46,6 +35,9 @@
         display: flex;
         gap: 35px;
         justify-content: left;
+        align-items: center;
+        font-family:
+          Arial, Helvetica, sans-serif; /* SOLUCIÓN: Alinea verticalmente los textos y los botones */
       }
       .div-titulo {
         color: rgb(37, 99, 235);
@@ -54,13 +46,14 @@
       .div-menu {
         display: flex;
         gap: 25px;
-        position: absolute;
-        right: 40px;
+        margin-left: auto; /* SOLUCIÓN: Usa Flexbox para empujar el menú a la derecha de forma alineada */
         justify-content: center;
         align-items: center;
       }
       .lista-menu {
         list-style: none;
+        margin: 0; /* SOLUCIÓN: Quita márgenes por defecto de las listas */
+        padding: 0; /* SOLUCIÓN: Quita paddings por defecto de las listas */
       }
       .a-subrayado {
         text-decoration: none;
@@ -83,81 +76,47 @@
         color: #f88400;
         padding: 5px 15px;
       }
-      /*Main*/
-      .main {
-        width: 100%;
-        background-color: #ffffff;
-      }
-      /*footer*/
-      .footer {
-        position: fixed;
-        background-color: #ffffff;
-        bottom: 0;
-        width: 100%;
-        left: 0%;
-        padding: 32px 0;
-        border-top: 2rem;
-        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
-      }
-      .div_footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-right: 30px;
-      }
-      .div_footer_1 {
-        display: flex;
-        gap: 40px;
-      }
-      .div_footer_2 {
-        display: flex;
-        gap: 40px;
-      }
     </style>
   </head>
   <body>
-    <header class="header">
-      <div class="div-titulo">
-        <h1 class="">BoxSync</h1>
-      </div>
-      <div class="div-menu">
-        <nav class="nav-menu">
-          <li class="lista-menu">
-            <a
-              href="../index.html"
-              class="a-subrayado"
-              style="color: #000000; font-weight: 1000"
-              >Dispositivo</a
-            >
-          </li>
-          <li class="lista-menu">
-            <a href="../historial_de_la_app/index.html" class="a-subrayado"
-              >Historial App</a
-            >
-          </li>
-          <li class="lista-menu">
-            <a href="index.html" class="a-subrayado">Contáctanos</a>
-          </li>
-          <div class="boton-base-de-datos">
+    <header>
+      <header class="header">
+        <div class="div-titulo">
+          <h1>BoxSync</h1>
+        </div>
+        <div style="margin-right: 2rem">
+          <h3 style="color: gray">|Plan de Suscripción</h3>
+        </div>
+        <div class="div-menu">
+          <nav class="nav-menu">
             <li class="lista-menu">
-              <a href="../base_de_datos/index.html" class="a-subrayado"
-                >Base de Datos</a
+              <a href="../index.html" class="a-subrayado">Dispositivo</a>
+            </li>
+            <li class="lista-menu">
+              <a href="../historial_de_la_app/index.html" class="a-subrayado"
+                >Historial App</a
               >
             </li>
-          </div>
-          <div class="boton-suscripcion">
             <li class="lista-menu">
-              <a
-                href="../plan_de_suscripcion/index.html"
-                class="a-subrayado"
-                style="color: #1d4ed8"
-                >Suscripción Activa</a
-              >
+              <a href="index.html" class="a-subrayado">Contáctanos</a>
             </li>
-          </div>
-        </nav>
-      </div>
+            <div class="boton-base-de-datos">
+              <li class="lista-menu">
+                <a href="../base_de_datos/index.html" class="a-subrayado"
+                  >Base de Datos</a
+                >
+              </li>
+            </div>
+            <div class="boton-suscripcion">
+              <li class="lista-menu">
+                <a href="../plan_de_suscripcion/index.html" class="a-subrayado" style="color: #1d4ed8"
+                  >Suscripción Activa</a
+                >
+              </li>
+            </div>
+          </nav>
+        </div>
+      </header>
     </header>
   </body>
 </html>
->>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09

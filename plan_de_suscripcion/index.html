@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,6 +13,7 @@
         flex-direction: column;
         min-height: 100vh;
         margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
       }
       /*Header*/
       .header {
@@ -21,11 +21,11 @@
         display: flex;
         top: 0;
         width: 100%;
+        height: 60px;
         left: 0%;
         padding: 15px 40px;
         align-items: center;
-        box-shadow: inset 0 5px 1.5cm rgba(0, 0, 0, 0.5);
-        box-sizing: border-box; /* Asegura que el padding no deforme el ancho */
+        box-sizing: border-box;
       }
       .div-contenedor {
         display: flex;
@@ -37,8 +37,9 @@
         display: flex;
         gap: 35px;
         justify-content: left;
-        align-items: center; 
-        font-family: Arial, Helvetica, sans-serif;/* SOLUCIÓN: Alinea verticalmente los textos y los botones */
+        align-items: center;
+        margin: 0;
+        padding: 0;
       }
       .div-titulo {
         color: rgb(37, 99, 235);
@@ -47,14 +48,12 @@
       .div-menu {
         display: flex;
         gap: 25px;
-        margin-left: auto; /* SOLUCIÓN: Usa Flexbox para empujar el menú a la derecha de forma alineada */
+        margin-left: auto;
         justify-content: center;
         align-items: center;
       }
       .lista-menu {
         list-style: none;
-        margin: 0; /* SOLUCIÓN: Quita márgenes por defecto de las listas */
-        padding: 0; /* SOLUCIÓN: Quita paddings por defecto de las listas */
       }
       .a-subrayado {
         text-decoration: none;
@@ -77,6 +76,7 @@
         color: #f88400;
         padding: 5px 15px;
       }
+
       /*main*/
       main {
         width: 100%;
@@ -85,14 +85,13 @@
       }
       .cuadro-de-suscripcion {
         background-color: #ffffff;
-        width: 500px;
-        height: 370px;
+        width: 350px;
+        height: 350px;
         text-align: center;
-        margin: 20px auto;
+        margin: 20px ;
         margin: 10px;
-        border: 1px solid #007bff;
-        border-radius: 0.5rem;
-        box-shadow: 0 5px 1.5cm rgba(0, 0, 0, 0.5);
+        border: 1px solid gray;
+        border-radius: 1rem;
       }
       .colocar-plan-de-suscripcion {
         display: flex;
@@ -100,14 +99,89 @@
         justify-content: center;
         align-items: center;
       }
+      .texto-suscripcion-1 {
+        position: absolute;
+        left: 330px;
+        top: 250px;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 280px; /* Limitamos el ancho del bloque de texto para que no se desborde */
+        text-align: left; /* Alineado a la izquierda para un look más limpio */
+      }
+      .texto-suscripcion-2 {
+        position: absolute;
+        left: 730px;
+        top: 250px;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 280px; /* Limitamos el ancho del bloque de texto para que no se desborde */
+        text-align: left; /* Alineado a la izquierda para un look más limpio */
+      }
+      .texto-suscripcion-3 {
+        position: absolute;
+        left: 1100px;
+        top: 250px;
+        font-family: Arial, Helvetica, sans-serif;
+
+      }
+      .texto-suscripcion-3 {
+        width: 280px; /* Ajustamos a 280px igual que los otros para mantener simetría */
+        left: 1110px; /* Ajuste fino de posición */
+        top: 250px;
+        text-align: left;
+      }
+      .etiqueta-popular {
+        position: absolute;
+        left: 810px;
+        top: 230px;
+        background-color: #2563eb;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 1rem;
+        width: 90px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* CLASES NUEVAS COPIADAS DE TU DISEÑO DE REFERENCIA PARA EL PRECIO */
+      .contenedor-precio-profesional {
+        display: flex;
+        align-items: baseline;
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+      .numero-grande {
+        font-size: 38px;
+        font-weight: 900;
+        color: #1e293b;
+      }
+      .simbolo-euro {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-left: 2px;
+      }
+      .texto-mes-pequeno {
+        font-size: 14px;
+        color: #64748b;
+        margin-left: 4px;
+      }
+
+      /* Forzamos a que todos los párrafos de las ventajas salten de línea si es necesario */
+      .texto-suscripcion-1 p, .texto-suscripcion-2 p, .texto-suscripcion-3 p {
+        white-space: normal;
+        margin-bottom: 8px;
+      }
+
       /*footer*/
       .footer {
-
         background-color: #ffffff;
         bottom: 0;
         width: 100%;
         left: 0%;
         padding: 32px 0;
+        height: 0%;
         box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
       }
       .div_footer {
@@ -137,7 +211,11 @@
       <div class="div-menu">
         <nav class="nav-menu">
           <li class="lista-menu">
-            <a href="../index.html" class="a-subrayado">Dispositivo</a>
+            <a
+              href="../index.html"
+              class="a-subrayado"
+              >Dispositivo</a
+            >
           </li>
           <li class="lista-menu">
             <a href="../historial_de_la_app/index.html" class="a-subrayado"
@@ -145,18 +223,21 @@
             >
           </li>
           <li class="lista-menu">
-            <a href="" class="a-subrayado">Contáctanos</a>
+            <a href="../contactanos/index.html" class="a-subrayado">Contáctanos</a>
           </li>
           <div class="boton-base-de-datos">
             <li class="lista-menu">
-              <a href="../base_de_datos2/index.html" class="a-subrayado"
+              <a href="../base_de_datos/index.html" class="a-subrayado"
                 >Base de Datos</a
               >
             </li>
           </div>
           <div class="boton-suscripcion">
             <li class="lista-menu">
-              <a href="index.html" class="a-subrayado" style="color: #1d4ed8"
+              <a
+                href="index.html"
+                class="a-subrayado"
+                style="color: #1d4ed8"
                 >Suscripción Activa</a
               >
             </li>
@@ -164,9 +245,8 @@
         </nav>
       </div>
     </header>
-
     <main>
-      <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Plan de Suscripción Activa</h2>
+      <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;"><strong>Plan de Suscripción Activa</strong></h2>
       <div>
         <div style="width: 500px; text-align: center; margin: 20px auto; font-family: Arial, Helvetica, sans-serif;">
           <p>
@@ -178,14 +258,49 @@
         </div>
 
       </div>
+      <div class="etiqueta-popular">
+        <h5><strong>Más Popular</strong></h5>
+      </div>
 
         <div class="colocar-plan-de-suscripcion">
           <div class="cuadro-de-suscripcion"></div>
-          <div class="cuadro-de-suscripcion"></div>
+          <div class="cuadro-de-suscripcion" style="border: 3px solid#2563eb;"></div>
           <div class="cuadro-de-suscripcion"></div>
         </div>
         <div>
-          <div class="texto-"></div>
+          <div class="texto-suscripcion-1">
+            <h2><strong>Básico</strong></h2>
+            <div class="contenedor-precio-profesional">
+              <span class="numero-grande">4,99</span>
+              <span class="simbolo-euro">€</span>
+              <span class="texto-mes-pequeno">/mes</span>
+            </div>
+            <p>✔️ Sincronización básica</p>
+            <p>✔️ Alertas por notificaciones</p>
+          </div>
+          <div class="texto-suscripcion-2">
+            <h2><strong>Estándar</strong></h2>
+            <div class="contenedor-precio-profesional">
+              <span class="numero-grande">9,99</span>
+              <span class="simbolo-euro">€</span>
+              <span class="texto-mes-pequeno">/mes</span>
+            </div>
+            <p>✔️ Incluye el plan básico</p>
+            <p>✔️ Soporta hasta 3 usuarios conectados por dispositivo </p>
+            <p>✔️ Control de avisos acústicos</p>
+          </div>
+          <div class="texto-suscripcion-3">
+            <h2><strong>Premium</strong></h2>
+            <div class="contenedor-precio-profesional">
+              <span class="numero-grande">19,99</span>
+              <span class="simbolo-euro">€</span>
+              <span class="texto-mes-pequeno">/mes</span>
+            </div>
+            <p>✔️ Incluye todo el plan básico y estándar </p>
+            <p>✔️ Informes exportables </p>
+            <p>✔️ Historial ilimitado en la nube</p>
+            <p>✔️ Soporte prioritario</p>
+          </div>
         </div>
         <div
           class="div-plan-de-suscripcion"
@@ -231,202 +346,5 @@
       }
       crearreloj();
     </script>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoxSync</title>
-    <head>
-        <style>
-          body {
-            background-color: #f8fafc;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-          }
-          /*Header*/
-          .header {
-            background-color: #ffffff;
-            display: flex;
-            top: 0;
-            width: 100%;
-            left: 0%;
-            padding: 15px 40px;
-            align-items: center;
-            box-shadow: inset 0 5px 1.5cm rgba(0, 0, 0, 0.5);
-          }
-          .div-contenedor {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-          }
-          .nav-menu {
-            display: flex;
-            gap: 35px;
-            justify-content: left;
-          }
-          .div-titulo {
-            color: rgb(37, 99, 235);
-            font-weight: bold;
-          }
-          .div-menu {
-            display: flex;
-            gap: 25px;
-            position: absolute;
-            right: 40px;
-            justify-content: center;
-            align-items: center;
-          }
-          .lista-menu {
-            list-style: none;
-          }
-          .a-subrayado {
-            text-decoration: none;
-            cursor: pointer;
-            color: gray;
-          }
-          .a-subrayado:hover {
-            color: #007bff;
-          }
-          .boton-suscripcion {
-            background-color: #eff6ff;
-            border: #007bff solid 1px;
-            border-radius: 1.5rem;
-            padding: 5px 15px;
-            font-weight: 700;
-          }
-          .boton-base-de-datos {
-            border: #007bff solid 1px;
-            border-radius: 0.5rem;
-            color: #f88400;
-            padding: 5px 15px;
-          }
-          /*main*/
-          main{
-            width: 100%;
-            height: 100%;
-          }
-            .cuadro-de-suscripcion {
-                background-color: #ffffff;
-                width: 350px;
-                height: 370px;
-                margin: 10px ;
-                border: 1px solid #007bff;
-                border-radius: 0.5rem;
-
-          }
-            .colocar-plan-de-suscripcion {
-                display: flex;
-                gap: 20px;
-                justify-content: center;
-                align-items: center;
-            }
-          /*footer*/
-          .footer {
-            position: fixed;
-            background-color: #ffffff;
-            bottom: 0;
-            width: 100%;
-            left: 0%;
-            padding: 32px 0;
-            border-top: 2rem;
-            box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
-          }
-          .div_footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
-          .div_footer_1 {
-            display: flex;
-            gap: 40px;
-          }
-          .div_footer_2 {
-            display: flex;
-            gap: 40px;
-          }
-        </style>
-      </head>
-      <body>
-        <header class="header">
-          <div class="div-titulo">
-            <h1 class="">BoxSync</h1>
-          </div>
-          <div style="margin-right: 2rem;">
-            <h3 style="color: gray">|Plan de Suscripción</h3>
-          </div>
-          <div class="div-menu">
-            <nav class="nav-menu">
-              <li class="lista-menu">
-                <a
-                  href="../index.html"
-                  class="a-subrayado"
-                  >Dispositivo</a
-                >
-              </li>
-              <li class="lista-menu">
-                <a href="../historial_de_la_app/index.html" class="a-subrayado"
-                  >Historial App</a
-                >
-              </li>
-              <li class="lista-menu">
-                <a href="../contactanos/index.html" class="a-subrayado">Contáctanos</a>
-              </li>
-              <div class="boton-base-de-datos">
-                <li class="lista-menu">
-                  <a href="../base_de_datos/index.html" class="a-subrayado">Base de Datos</a>
-                </li>
-              </div>
-              <div class="boton-suscripcion">
-                <li class="lista-menu">
-                  <a href="../plan_de_suscripcion/index.html" class="a-subrayado" style="color: #1d4ed8"
-                    >Suscripción Activa</a
-                  >
-                </li>
-              </div>
-            </nav>
-          </div>
-        </header>
-        <main class="main">
-          <h2 style="text-align: center; margin-top: 20px;">Plan de Suscripción Activa</h2>
-          <div style="width: 500px; text-align: center; margin: 20px auto; ">
-          <p>
-            Tu suscripción está activa y lista para brindarte la mejor experiencia de sincronización de datos. Disfruta de todas las funciones y beneficios que ofrecemos para mantener tus dispositivos conectados y tus datos seguros.
-          </p>
-          </div>
-          <div class="colocar-plan-de-suscripcion">
-            <div class="cuadro-de-suscripcion";></div>
-            <div class="cuadro-de-suscripcion"></div>
-            <div class="cuadro-de-suscripcion"></div>
-          </div>
-          <div class="div-plan-de-suscripcion" style="width: 500px; height: 470px; text-align: center; margin: 20px auto; ">
-            <p>
-              Si tienes alguna pregunta o necesitas asistencia, no dudes en contactarnos. Estamos aquí para ayudarte en cada paso del camino.
-            </p>
-            <p>
-              ¡Gracias por confiar en BoxSync!
-            </p>
-
-          </div>
-        </main>
-        <footer class="footer">
-          <div class="div_footer">
-            <div class="div_footer_1">
-              <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
-              <span>Configuración: Farmacia Autorizada</span>
-            </div>
-            <div class="div_footer_2">
-              <span>App Sincorniza</span>
-              <span id="footer-clock-original">00:00:00</span>
-            </div>
-          </div>
-        </footer>
-      </body>
-    </html>
->>>>>>> d4192ab7fb10481d0b92808629aa85fe09d5fb09
   </body>
 </html>

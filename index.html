@@ -13,6 +13,7 @@
         flex-direction: column;
         min-height: 100vh;
         margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
       }
       /*Header*/
       .header {
@@ -20,10 +21,11 @@
         display: flex;
         top: 0;
         width: 100%;
+        height: 60px;
         left: 0%;
         padding: 15px 40px;
         align-items: center;
-        box-shadow: inset 0 5px 1.5cm rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
       }
       .div-contenedor {
         display: flex;
@@ -35,6 +37,9 @@
         display: flex;
         gap: 35px;
         justify-content: left;
+        align-items: center;
+        margin: 0;
+        padding: 0;
       }
       .div-titulo {
         color: rgb(37, 99, 235);
@@ -43,8 +48,7 @@
       .div-menu {
         display: flex;
         gap: 25px;
-        position: absolute;
-        right: 40px;
+        margin-left: auto;
         justify-content: center;
         align-items: center;
       }
@@ -72,56 +76,103 @@
         color: #f88400;
         padding: 5px 15px;
       }
+
       /*main*/
       .main {
         width: 100%;
-        height: 100%;
-        background-color: white;
+        background-color: #f8fafc;
         flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+        box-sizing: border-box;
       }
+
+      /* DISEÑO DE CALENDARIO COMO LA IMAGEN */
       .calendario {
-        position: absolute;
-        top: 200px;
-        left: 50%;
-        border: #000000 solid 1px;
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 1.5rem;
+        box-shadow:
+          0 10px 25px -5px rgba(0, 0, 0, 0.05),
+          0 8px 10px -6px rgba(0, 0, 0, 0.05);
         display: grid;
-        grid-template-columns: repeat(7, 5fr); /* 7 columnas del mismo tamaño */
-        gap: 1rem; /* Espacio entre casillas */
-        padding: 1.5rem;
-        font-family: sans-serif;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.75rem;
+        padding: 2.5rem;
         width: 850px;
-        height: 500px;
-        background-color: white;
+        box-sizing: border-box;
       }
+
+      .titulo-calendario {
+        grid-column: 1 / 8;
+        margin-bottom: 1.5rem;
+      }
+
+      .titulo-calendario h2 {
+        margin: 0 0 1rem 0;
+        color: #1e293b;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      /* Zona de leyenda informativa superior */
+      .leyenda-contenedor {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        font-size: 14px;
+        color: #64748b;
+      }
+
+      .leyenda-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* Casillas de los días individuales */
       .numeros-calendario {
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        height: 75px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 1rem;
-        border-radius: 0.75rem; 
-        border: 1px solid #394e79; 
-        background-color: #c36767;
+        justify-content: space-between;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 600;
       }
-      .titulo-calendario {
-        margin-bottom: 2rem;
-        text-align: left;
-        grid-column: 1/8;
-      }
-      .cuadro-pendiente {
-        width: 10px;
-        height: 10px;
-        background-color: #000000;
-        display: flex;
-        position: ri;
-      }
-      .cuadro-alerta {
-        width: 10px;
-        height: 10px;
-        background-color: #000000;
-        display: flex;
 
+      .numeros-calendario:hover {
+        background-color: #f1f5f9;
+        border-color: #cbd5e1;
       }
+
+      /* Puntos de estado redondos (Dots) */
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: block;
+      }
+
+      .dot-completado {
+        background-color: #10b981; /* Verde de toma exitosa */
+      }
+
+      .dot-alerta {
+        background-color: #ef4444; /* Rojo de alerta de sensor/olvido */
+      }
+
+      .dot-pendiente {
+        background-color: #cbd5e1; /* Gris de futura toma */
+      }
+
       /*footer*/
       .footer {
         background-color: #ffffff;
@@ -129,30 +180,34 @@
         width: 100%;
         left: 0%;
         padding: 32px 0;
-        border-top: 2rem;
-        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
+        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.05);
       }
       .div_footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 40px;
       }
       .div_footer_1 {
         display: flex;
         gap: 40px;
+        color: #64748b;
+        font-size: 14px;
       }
       .div_footer_2 {
         display: flex;
         gap: 40px;
+        color: #64748b;
+        font-size: 14px;
       }
     </style>
   </head>
   <body>
     <header class="header">
       <div class="div-titulo">
-        <h1 class="">BoxSync</h1>
+        <h1>BoxSync</h1>
       </div>
-      <div>
+      <div style="margin-right: 2rem">
         <h3 style="color: gray">|Dispositivo</h3>
       </div>
       <div class="div-menu">
@@ -171,17 +226,19 @@
             >
           </li>
           <li class="lista-menu">
-            <a href="" class="a-subrayado">Contáctanos</a>
+            <a href="contactanos/index.html" class="a-subrayado">Contáctanos</a>
           </li>
           <div class="boton-base-de-datos">
             <li class="lista-menu">
-              <a href="" class="a-subrayado">Base de Datos</a>
+              <a href="base_de_datos2/index.html" class="a-subrayado"
+                >Base de Datos</a
+              >
             </li>
           </div>
           <div class="boton-suscripcion">
             <li class="lista-menu">
               <a
-                href="plan_de_suscripcion2/index.html"
+                href="plan_de_suscripcion/index.html"
                 class="a-subrayado"
                 style="color: #1d4ed8"
                 >Suscripción Activa</a
@@ -191,54 +248,128 @@
         </nav>
       </div>
     </header>
+
     <main class="main">
       <section class="calendario">
         <div class="titulo-calendario">
           <h2>Configuración del Calendario</h2>
-          <div class="cuadro-pendiente"></div>
-          <div class="cuadro-alerta"></div>
+          <div class="leyenda-contenedor">
+            <div class="leyenda-item">
+              <span class="status-dot dot-completado"></span> Completado
+            </div>
+            <div class="leyenda-item">
+              <span class="status-dot dot-alerta"></span> Alerta / Olvido
+            </div>
+            <div class="leyenda-item">
+              <span class="status-dot dot-pendiente"></span> Pendiente
+            </div>
+          </div>
         </div>
-        <div class="numeros-calendario">1</div>
-        <div class="numeros-calendario">2</div>
-        <div class="numeros-calendario">3</div>
-        <div class="numeros-calendario">4</div>
-        <div class="numeros-calendario">5</div>
-        <div class="numeros-calendario">6</div>
-        <div class="numeros-calendario">7</div>
-        <div class="numeros-calendario">8</div>
-        <div class="numeros-calendario">9</div>
-        <div class="numeros-calendario">10</div>
-        <div class="numeros-calendario">11</div>
-        <div class="numeros-calendario">12</div>
-        <div class="numeros-calendario">13</div>
-        <div class="numeros-calendario">14</div>
-        <div class="numeros-calendario">15</div>
-        <div class="numeros-calendario">16</div>
-        <div class="numeros-calendario">17</div>
-        <div class="numeros-calendario">18</div>
-        <div class="numeros-calendario">19</div>
-        <div class="numeros-calendario">20</div>
-        <div class="numeros-calendario">21</div>
-        <div class="numeros-calendario">22</div>
-        <div class="numeros-calendario">23</div>
-        <div class="numeros-calendario">24</div>
-        <div class="numeros-calendario">25</div>
-        <div class="numeros-calendario">26</div>
-        <div class="numeros-calendario">27</div>
-        <div class="numeros-calendario">28</div>
-        <div class="numeros-calendario">29</div>
-        <div class="numeros-calendario">30</div>
-        <div class="numeros-calendario">31</div>
+
+        <div class="numeros-calendario">
+          1 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          2 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          3 <span class="status-dot dot-alerta"></span>
+        </div>
+        <div class="numeros-calendario">
+          4 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          5 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          6 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          7 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          8 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          9 <span class="status-dot dot-alerta"></span>
+        </div>
+        <div class="numeros-calendario">
+          10 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          11 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          12 <span class="status-dot dot-completado"></span>
+        </div>
+        <div class="numeros-calendario">
+          13 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          14 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          15 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          16 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          17 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          18 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          19 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          20 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          21 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          22 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          23 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          24 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          25 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          26 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          27 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          28 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          29 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          30 <span class="status-dot dot-pendiente"></span>
+        </div>
+        <div class="numeros-calendario">
+          31 <span class="status-dot dot-pendiente"></span>
+        </div>
       </section>
     </main>
+
     <footer class="footer">
       <div class="div_footer">
         <div class="div_footer_1">
-          <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
+          <span>&copy; 2026 BoxSync. Todos los derechos reservados.</span>
           <span>Configuración: Farmacia Autorizada</span>
         </div>
         <div class="div_footer_2">
-          <span>App Sincorniza</span>
+          <span>App Sincroniza</span>
           <span id="footer-reloj">00:00:00</span>
         </div>
       </div>

@@ -14,7 +14,7 @@
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
       }
-      /*Header*/
+      /*Header - SIN CAMBIOS*/
       .header {
         background-color: #ffffff;
         display: flex;
@@ -76,43 +76,144 @@
         padding: 5px 15px;
       }
 
-      /*main*/
+      /* ==========================================================================
+         MAIN: HISTORIAL CON TRES TARJETAS DE COLORES SENCILLAS
+         ========================================================================= */
       .main {
         width: 100%;
-        height: 100%;
-        background-color: #fffffc;
+        min-height: calc(100vh - 124px);
+        background-color: #f8fafc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        gap: 25px;
       }
-      .calendario {
-        background-color: #c5dac8;
-        width: 850px;
-        height: 800px;
-        border-radius: 1.5rem;
-        border: 1px solid #000000;
-        margin-top: 10rem;
+
+      /* Tres cuadrados superiores sencillos */
+      .tarjetas-resumen {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
       }
-      /*footer*/
+
+      .tarjeta-simple {
+        background-color: #ffffff;
+        flex: 1;
+        padding: 15px;
+        border-radius: 0.5rem;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+      }
+
+      /* Bordes superiores de tres colores diferentes */
+      .borde-azul {
+        border-top: 4px solid #3b82f6;
+      }
+      .borde-amarillo {
+        border-top: 4px solid #eab308;
+      }
+      .borde-rojo {
+        border-top: 4px solid #ef4444;
+      }
+
+      .tarjeta-simple p {
+        margin: 5px 0;
+      }
+
+      .titulo-tarjeta {
+        font-size: 12px;
+        color: #64748b;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .numero-tarjeta {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1e293b;
+      }
+
+      /* Bloque de la tabla */
+      .contenedor-historial {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        padding: 25px;
+        width: 100%;
+        max-width: 800px;
+      }
+
+      .contenedor-historial h2 {
+        margin: 0 0 20px 0;
+        font-size: 18px;
+        color: #1e293b;
+      }
+
+      /* Tabla básica */
+      .tabla-simple {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 14px;
+      }
+
+      .tabla-simple th {
+        color: #64748b;
+        padding: 12px;
+        border-bottom: 2px solid #e2e8f0;
+        font-weight: bold;
+      }
+
+      .tabla-simple td {
+        padding: 12px;
+        border-bottom: 1px solid #e2e8f0;
+        color: #334155;
+      }
+
+      /* Textos planos sin puntos de colores */
+      .texto-verde {
+        color: #16a34a;
+        font-weight: bold;
+      }
+      .texto-naranja {
+        color: #d97706;
+        font-weight: bold;
+      }
+      .texto-rojo {
+        color: #dc2626;
+        font-weight: bold;
+      }
+      /* ========================================================================== */
+
+      /*footer - SIN CAMBIOS*/
       .footer {
         background-color: #ffffff;
         bottom: 0;
         width: 100%;
-        height: 0%;
         left: 0%;
         padding: 32px 0;
-        border-top: 2rem;
-        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
+        margin-top: auto;
       }
       .div_footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 40px;
       }
       .div_footer_1 {
         display: flex;
         gap: 40px;
+        color: #64748b;
+        font-size: 14px;
       }
       .div_footer_2 {
         display: flex;
         gap: 40px;
+        color: #64748b;
+        font-size: 14px;
       }
     </style>
   </head>
@@ -122,7 +223,7 @@
         <h1>BoxSync</h1>
       </div>
       <div style="margin-right: 2rem">
-        <h3 style="color: gray">|Plan de Suscripción</h3>
+        <h3 style="color: gray">|Historial App</h3>
       </div>
       <div class="div-menu">
         <nav class="nav-menu">
@@ -130,7 +231,10 @@
             <a href="../index.html" class="a-subrayado">Dispositivo</a>
           </li>
           <li class="lista-menu">
-            <a href="index.html" class="a-subrayado"
+            <a
+              href="index.html"
+              class="a-subrayado"
+              style="color: #000000; font-weight: 1000"
               >Historial App</a
             >
           </li>
@@ -141,14 +245,17 @@
           </li>
           <div class="boton-base-de-datos">
             <li class="lista-menu">
-              <a href="../base_de_datos/index.html" class="a-subrayado"
+              <a href="base_de_datos2/index.html" class="a-subrayado"
                 >Base de Datos</a
               >
             </li>
           </div>
           <div class="boton-suscripcion">
             <li class="lista-menu">
-              <a href="index.html" class="a-subrayado" style="color: #1d4ed8"
+              <a
+                href="../plan_de_suscripcion/index.html"
+                class="a-subrayado"
+                style="color: #1d4ed8"
                 >Suscripción Activa</a
               >
             </li>
@@ -156,20 +263,93 @@
         </nav>
       </div>
     </header>
+
     <main class="main">
-      <div class="calendario"></div>
+      <div class="tarjetas-resumen">
+        <div class="tarjeta-simple borde-azul">
+          <p class="titulo-tarjeta">Tomas Correctas</p>
+          <p class="numero-tarjeta">28/31</p>
+        </div>
+        <div class="tarjeta-simple borde-amarillo">
+          <p class="titulo-tarjeta">Retrasos Detectados</p>
+          <p class="numero-tarjeta">2</p>
+        </div>
+        <div class="tarjeta-simple borde-rojo">
+          <p class="titulo-tarjeta">Alertas de Error</p>
+          <p class="numero-tarjeta">1</p>
+        </div>
+      </div>
+
+      <div class="contenedor-historial">
+        <h2>Historial de Tomas</h2>
+
+        <table class="tabla-simple">
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Hora Programada</th>
+              <th>Hora Real</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Día 3</td>
+              <td>10:30 AM</td>
+              <td>10:32 AM</td>
+              <td class="texto-verde">Correcto</td>
+            </tr>
+            <tr>
+              <td>Día 2</td>
+              <td>10:30 AM</td>
+              <td>10:45 AM</td>
+              <td class="texto-naranja">Retraso</td>
+            </tr>
+            <tr>
+              <td>Día 1</td>
+              <td>10:30 AM</td>
+              <td>ERROR</td>
+              <td class="texto-rojo">Error</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
+
     <footer class="footer">
       <div class="div_footer">
         <div class="div_footer_1">
-          <span>&copy; 2023 BoxSync. Todos los derechos reservados.</span>
+          <span>&copy; 2026 BoxSync. Todos los derechos reservados.</span>
           <span>Configuración: Farmacia Autorizada</span>
         </div>
         <div class="div_footer_2">
-          <span>App Sincorniza</span>
-          <span id="footer-clock-original">00:00:00</span>
+          <span>App Sincroniza</span>
+          <span id="footer-reloj">00:00:00</span>
         </div>
       </div>
     </footer>
+
+    <script>
+      function crearreloj() {
+        const casillareloj = document.querySelector("#footer-reloj");
+        const relojPantalla = document.querySelector("#pantalla-reloj");
+
+        setInterval(() => {
+          const ahora = new Date();
+
+          const hora = String(ahora.getHours()).padStart(2, "0");
+          const minutes = String(ahora.getMinutes()).padStart(2, "0");
+          const segundos = String(ahora.getSeconds()).padStart(2, "0");
+
+          const tiempoFormateado = `${hora}:${minutes}:${segundos}`;
+
+          casillareloj.textContent = tiempoFormateado;
+          if (relojPantalla) {
+            relojPantalla.textContent = tiempoFormateado;
+          }
+        }, 1000);
+      }
+      crearreloj();
+    </script>
   </body>
 </html>

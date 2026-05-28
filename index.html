@@ -15,7 +15,7 @@
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
       }
-      /*Header*/
+      /*Header - COLORES ORIGINALES RESTAURADOS*/
       .header {
         background-color: #ffffff;
         display: flex;
@@ -77,31 +77,29 @@
         padding: 5px 15px;
       }
 
-      /*main*/
+      /*Main con distribución de bloques a los lados*/
       .main {
         width: 100%;
         background-color: #f8fafc;
         flex: 1;
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 40px 0;
+        align-items: flex-start;
+        padding: 40px 20px;
         box-sizing: border-box;
+        gap: 30px;
       }
 
-      /* DISEÑO DE CALENDARIO COMO LA IMAGEN */
+      /*Calendario con sus estilos originales*/
       .calendario {
         background-color: #ffffff;
         border: 1px solid #e2e8f0;
         border-radius: 1.5rem;
-        box-shadow:
-          0 10px 25px -5px rgba(0, 0, 0, 0.05),
-          0 8px 10px -6px rgba(0, 0, 0, 0.05);
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         gap: 0.75rem;
         padding: 2.5rem;
-        width: 850px;
+        width: 700px;
         box-sizing: border-box;
       }
 
@@ -117,7 +115,6 @@
         font-weight: 700;
       }
 
-      /* Zona de leyenda informativa superior */
       .leyenda-contenedor {
         display: flex;
         gap: 20px;
@@ -132,7 +129,6 @@
         gap: 6px;
       }
 
-      /* Casillas de los días individuales */
       .numeros-calendario {
         background-color: #f8fafc;
         border: 1px solid #e2e8f0;
@@ -153,7 +149,6 @@
         border-color: #cbd5e1;
       }
 
-      /* Puntos de estado redondos (Dots) */
       .status-dot {
         width: 8px;
         height: 8px;
@@ -162,25 +157,139 @@
       }
 
       .dot-completado {
-        background-color: #10b981; /* Verde de toma exitosa */
+        background-color: #10b981;
       }
 
       .dot-alerta {
-        background-color: #ef4444; /* Rojo de alerta de sensor/olvido */
+        background-color: #ef4444;
       }
 
       .dot-pendiente {
-        background-color: #cbd5e1; /* Gris de futura toma */
+        background-color: #cbd5e1;
       }
 
-      /*footer*/
+      /* Columna Derecha */
+      .columna-derecha {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 360px;
+      }
+
+      /* NUVOS COLORES PROFESIONALES SOLO PARA LOS ELEMENTOS NUEVOS */
+      /* Elemento Nuevo 1: Pantalla integrada (Gris Pizarra Médico) */
+      .panel-pantalla-integrada {
+        background-color: #1e293b;
+        color: #ffffff;
+        border-radius: 1.5rem;
+        padding: 25px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      }
+      .subtitulo-pantalla {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #94a3b8;
+        margin: 0 0 15px 0;
+        font-weight: bold;
+      }
+      .reloj-grande {
+        font-size: 42px;
+        font-weight: bold;
+        margin: 0;
+        color: #f8fafc;
+        letter-spacing: 1px;
+      }
+      .fecha-reloj {
+        font-size: 14px;
+        color: #94a3b8;
+        margin: 5px 0 30px 0;
+      }
+      .proxima-toma-texto {
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #38bdf8; /* Azul claro estilo pantalla electrónica */
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .proxima-toma-valor {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0;
+        color: #f1f5f9;
+      }
+
+      /* Elemento Nuevo 2: Panel de control */
+      .panel-de-control {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 1.5rem;
+        padding: 25px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      }
+      .panel-de-control h3 {
+        margin: 0 0 20px 0;
+        color: #0f172a;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .control-grupo {
+        margin-bottom: 20px;
+      }
+      .control-grupo label {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #64748b;
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      .control-input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.5rem;
+        background-color: #f8fafc;
+        box-sizing: border-box;
+        font-size: 15px;
+        font-weight: bold;
+        color: #334155;
+      }
+      .control-input-hora {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #0284c7; /* Azul corporativo médico */
+        border-radius: 0.5rem;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        font-size: 15px;
+        color: #0f172a;
+      }
+      .boton-control-azul {
+        width: 100%;
+        background-color: #0284c7; /* Azul corporativo médico */
+        color: white;
+        border: none;
+        padding: 12px;
+        font-weight: bold;
+        font-size: 15px;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+      .boton-control-azul:hover {
+        background-color: #0369a1;
+      }
+
+      /*Footer - COLORES ORIGINALES RESTAURADOS*/
       .footer {
         background-color: #ffffff;
         bottom: 0;
         width: 100%;
         left: 0%;
         padding: 32px 0;
-        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.05);
       }
       .div_footer {
         display: flex;
@@ -360,6 +469,32 @@
           31 <span class="status-dot dot-pendiente"></span>
         </div>
       </section>
+
+      <div class="columna-derecha">
+        <div class="panel-pantalla-integrada">
+          <p class="subtitulo-pantalla">Pantalla Integrada</p>
+          <p class="reloj-grande" id="pantalla-reloj">20:58:54</p>
+          <p class="fecha-reloj">28 de mayo de 2026</p>
+          <p class="proxima-toma-texto">Próxima toma programada</p>
+          <p class="proxima-toma-valor">Casilla 4 - 10:30</p>
+        </div>
+
+        <div class="panel-de-control">
+          <h3>Panel de Control</h3>
+
+          <div class="control-grupo">
+            <label>Día de la toma (Sensor)</label>
+            <input type="text" class="control-input" value="4" readonly />
+          </div>
+
+          <div class="control-grupo">
+            <label>Hora de la toma</label>
+            <input type="time" class="control-input-hora" value="10:30" />
+          </div>
+
+          <button class="boton-control-azul">Actualizar Dispositivo</button>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
@@ -374,9 +509,12 @@
         </div>
       </div>
     </footer>
+
     <script>
       function crearreloj() {
         const casillareloj = document.querySelector("#footer-reloj");
+        const relojPantalla = document.querySelector("#pantalla-reloj");
+
         setInterval(() => {
           const ahora = new Date();
 
@@ -384,7 +522,12 @@
           const minutos = String(ahora.getMinutes()).padStart(2, "0");
           const segundos = String(ahora.getSeconds()).padStart(2, "0");
 
-          casillareloj.textContent = `${hora}:${minutos}:${segundos}`;
+          const tiempoFormateado = `${hora}:${minutos}:${segundos}`;
+
+          casillareloj.textContent = tiempoFormateado;
+          if (relojPantalla) {
+            relojPantalla.textContent = tiempoFormateado;
+          }
         }, 1000);
       }
       crearreloj();

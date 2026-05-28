@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BoxSync</title>
-    <link rel="icon" type="image/x-icon" href="../img/imagen-logo2-web.png">
+    <link rel="icon" type="image/x-icon" href="../img/imagen-logo2-web.png" />
 
     <style>
       body {
@@ -86,9 +86,8 @@
       .cuadro-de-suscripcion {
         background-color: #ffffff;
         width: 350px;
-        height: 350px;
+        height: 380px;
         text-align: center;
-        margin: 20px ;
         margin: 10px;
         border: 1px solid gray;
         border-radius: 1rem;
@@ -99,35 +98,35 @@
         justify-content: center;
         align-items: center;
       }
+
       .texto-suscripcion-1 {
         position: absolute;
-        left: 330px;
+        left: 335px;
         top: 250px;
         font-family: Arial, Helvetica, sans-serif;
-        width: 280px; /* Limitamos el ancho del bloque de texto para que no se desborde */
-        text-align: left; /* Alineado a la izquierda para un look más limpio */
+        width: 280px;
+        height: 340px;
+        text-align: left;
       }
       .texto-suscripcion-2 {
         position: absolute;
-        left: 730px;
+        left: 735px;
         top: 250px;
         font-family: Arial, Helvetica, sans-serif;
-        width: 280px; /* Limitamos el ancho del bloque de texto para que no se desborde */
-        text-align: left; /* Alineado a la izquierda para un look más limpio */
+        width: 280px;
+        height: 340px;
+        text-align: left;
       }
       .texto-suscripcion-3 {
         position: absolute;
-        left: 1100px;
+        width: 280px;
+        left: 1115px;
         top: 250px;
         font-family: Arial, Helvetica, sans-serif;
-
-      }
-      .texto-suscripcion-3 {
-        width: 280px; /* Ajustamos a 280px igual que los otros para mantener simetría */
-        left: 1110px; /* Ajuste fino de posición */
-        top: 250px;
+        height: 340px;
         text-align: left;
       }
+
       .etiqueta-popular {
         position: absolute;
         left: 810px;
@@ -144,7 +143,6 @@
         font-family: Arial, Helvetica, sans-serif;
       }
 
-      /* CLASES NUEVAS COPIADAS DE TU DISEÑO DE REFERENCIA PARA EL PRECIO */
       .contenedor-precio-profesional {
         display: flex;
         align-items: baseline;
@@ -168,10 +166,28 @@
         margin-left: 4px;
       }
 
-      /* Forzamos a que todos los párrafos de las ventajas salten de línea si es necesario */
-      .texto-suscripcion-1 p, .texto-suscripcion-2 p, .texto-suscripcion-3 p {
+      .texto-suscripcion-1 p,
+      .texto-suscripcion-2 p,
+      .texto-suscripcion-3 p {
         white-space: normal;
         margin-bottom: 8px;
+      }
+
+      /* EL ÚNICO ESTILO DE BOTÓN AZÚL PARA LOS TRES PLANES */
+      .boton-empezar-azul {
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        width: 100%;
+        position: absolute;
+        bottom: 0; /* Mantiene los tres botones alineados exactamente abajo */
+      }
+      .boton-empezar-azul:hover {
+        background-color: #1d4ed8;
       }
 
       /*footer*/
@@ -181,8 +197,7 @@
         width: 100%;
         left: 0%;
         padding: 32px 0;
-        height: 0%;
-        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.5);
+        box-shadow: 0 -1px 0.5cm rgba(0, 0, 0, 0.05);
       }
       .div_footer {
         display: flex;
@@ -193,10 +208,14 @@
       .div_footer_1 {
         display: flex;
         gap: 40px;
+        color: #64748b;
+        font-size: 14px;
       }
       .div_footer_2 {
         display: flex;
         gap: 40px;
+        color: #64748b;
+        font-size: 14px;
       }
     </style>
   </head>
@@ -211,11 +230,7 @@
       <div class="div-menu">
         <nav class="nav-menu">
           <li class="lista-menu">
-            <a
-              href="../index.html"
-              class="a-subrayado"
-              >Dispositivo</a
-            >
+            <a href="../index.html" class="a-subrayado">Dispositivo</a>
           </li>
           <li class="lista-menu">
             <a href="../historial_de_la_app/index.html" class="a-subrayado"
@@ -223,7 +238,9 @@
             >
           </li>
           <li class="lista-menu">
-            <a href="../contactanos/index.html" class="a-subrayado">Contáctanos</a>
+            <a href="../contactanos/index.html" class="a-subrayado"
+              >Contáctanos</a
+            >
           </li>
           <div class="boton-base-de-datos">
             <li class="lista-menu">
@@ -234,10 +251,7 @@
           </div>
           <div class="boton-suscripcion">
             <li class="lista-menu">
-              <a
-                href="index.html"
-                class="a-subrayado"
-                style="color: #1d4ed8"
+              <a href="index.html" class="a-subrayado" style="color: #1d4ed8"
                 >Suscripción Activa</a
               >
             </li>
@@ -246,9 +260,18 @@
       </div>
     </header>
     <main>
-      <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;"><strong>Plan de Suscripción Activa</strong></h2>
+      <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif">
+        <strong>Plan de Suscripción Activa</strong>
+      </h2>
       <div>
-        <div style="width: 500px; text-align: center; margin: 20px auto; font-family: Arial, Helvetica, sans-serif;">
+        <div
+          style="
+            width: 500px;
+            text-align: center;
+            margin: 20px auto;
+            font-family: Arial, Helvetica, sans-serif;
+          "
+        >
           <p>
             Tu suscripción está activa y lista para brindarte la mejor
             experiencia de sincronización de datos. Disfruta de todas las
@@ -256,91 +279,100 @@
             conectados y tus datos seguros.
           </p>
         </div>
-
       </div>
+
       <div class="etiqueta-popular">
         <h5><strong>Más Popular</strong></h5>
       </div>
 
-        <div class="colocar-plan-de-suscripcion">
-          <div class="cuadro-de-suscripcion"></div>
-          <div class="cuadro-de-suscripcion" style="border: 3px solid#2563eb;"></div>
-          <div class="cuadro-de-suscripcion"></div>
-        </div>
-        <div>
-          <div class="texto-suscripcion-1">
-            <h2><strong>Básico</strong></h2>
-            <div class="contenedor-precio-profesional">
-              <span class="numero-grande">4,99</span>
-              <span class="simbolo-euro">€</span>
-              <span class="texto-mes-pequeno">/mes</span>
-            </div>
-            <p>✔️ Sincronización básica</p>
-            <p>✔️ Alertas por notificaciones</p>
-          </div>
-          <div class="texto-suscripcion-2">
-            <h2><strong>Estándar</strong></h2>
-            <div class="contenedor-precio-profesional">
-              <span class="numero-grande">9,99</span>
-              <span class="simbolo-euro">€</span>
-              <span class="texto-mes-pequeno">/mes</span>
-            </div>
-            <p>✔️ Incluye el plan básico</p>
-            <p>✔️ Soporta hasta 3 usuarios conectados por dispositivo </p>
-            <p>✔️ Control de avisos acústicos</p>
-          </div>
-          <div class="texto-suscripcion-3">
-            <h2><strong>Premium</strong></h2>
-            <div class="contenedor-precio-profesional">
-              <span class="numero-grande">19,99</span>
-              <span class="simbolo-euro">€</span>
-              <span class="texto-mes-pequeno">/mes</span>
-            </div>
-            <p>✔️ Incluye todo el plan básico y estándar </p>
-            <p>✔️ Informes exportables </p>
-            <p>✔️ Historial ilimitado en la nube</p>
-            <p>✔️ Soporte prioritario</p>
-          </div>
-        </div>
+      <div class="colocar-plan-de-suscripcion">
+        <div class="cuadro-de-suscripcion"></div>
         <div
-          class="div-plan-de-suscripcion"
-          style="
-            width: 500px;
-            height: 470px;
-            text-align: center;
-            margin: 20px auto; font-family: Arial, Helvetica, sans-serif
-          "
-        >
-          <p >
-            Si tienes alguna pregunta o necesitas asistencia, no dudes en
-            contactarnos. Estamos aquí para ayudarte en cada paso del camino.
-          </p>
-          <p>¡Gracias por confiar en BoxSync!</p>
+          class="cuadro-de-suscripcion"
+          style="border: 3px solid #2563eb"
+        ></div>
+        <div class="cuadro-de-suscripcion"></div>
+      </div>
+
+      <div>
+        <div class="texto-suscripcion-1">
+          <h2><strong>Básico</strong></h2>
+          <div class="contenedor-precio-profesional">
+            <span class="numero-grande">4,99</span>
+            <span class="simbolo-euro">€</span>
+            <span class="texto-mes-pequeno">/mes</span>
+          </div>
+          <p>✔️ Sincronización básica</p>
+          <p>✔️ Alertas por notificaciones</p>
+          <button class="boton-empezar-azul">Empezar ahora</button>
+        </div>
+
+        <div class="texto-suscripcion-2">
+          <h2><strong>Estándar</strong></h2>
+          <div class="contenedor-precio-profesional">
+            <span class="numero-grande">9,99</span>
+            <span class="simbolo-euro">€</span>
+            <span class="texto-mes-pequeno">/mes</span>
+          </div>
+          <p>✔️ Incluye el plan básico</p>
+          <p>✔️ Soporta hasta 3 usuarios</p>
+          <p>✔️ Control de avisos acústicos</p>
+          <button class="boton-empezar-azul">Empezar ahora</button>
+        </div>
+
+        <div class="texto-suscripcion-3">
+          <h2><strong>Premium</strong></h2>
+          <div class="contenedor-precio-profesional">
+            <span class="numero-grande">19,99</span>
+            <span class="simbolo-euro">€</span>
+            <span class="texto-mes-pequeno">/mes</span>
+          </div>
+          <p>✔️ Incluye todo el plan básico</p>
+          <p>✔️ Informes exportables</p>
+          <p>✔️ Historial ilimitado en la nube</p>
+          <button class="boton-empezar-azul">Empezar ahora</button>
         </div>
       </div>
+
+      <div
+        class="div-plan-de-suscripcion"
+        style="
+          width: 500px;
+          height: 200px;
+          text-align: center;
+          margin: 80px auto;
+          font-family: Arial, Helvetica, sans-serif;
+        "
+      >
+        <p>
+          Si tienes alguna pregunta o necesitas asistencia, no dudes en
+          contactarnos. Estamos aquí para ayudarte en cada paso del camino.
+        </p>
+        <p>¡Gracias por confiar en BoxSync!</p>
+      </div>
     </main>
-    <footer class="footer" style="font-family: Arial, Helvetica, sans-serif;">
+
+    <footer class="footer">
       <div class="div_footer">
         <div class="div_footer_1">
           <span>&copy; 2026 BoxSync. Todos los derechos reservados.</span>
           <span>Configuración: Farmacia Autorizada</span>
         </div>
         <div class="div_footer_2">
-          <span>App Sincorniza</span>
+          <span>App Sincroniza</span>
           <span id="footer-reloj">00:00:00</span>
         </div>
       </div>
     </footer>
+
     <script>
-      function crearreloj (){
-        const casillareloj = document.querySelector("#footer-reloj")
+      function crearreloj() {
+        const casillareloj = document.querySelector("#footer-reloj");
         setInterval(() => {
-          const ahora = new Date ();
-
-          const hora = String(ahora.getHours()).padStart(2, '0');
-          const minutos = String(ahora.getMinutes()).padStart(2, '0');
-          const segundos = String(ahora.getSeconds()).padStart(2, '0');
-
+          const ahora = new Date();
+          const hora = String(ahora.getHours()).padStart(2, "0");
+          const minutos = String(ahora.getMinutes()).padStart(2, "0");
+          const segundos = String(ahora.getSeconds()).padStart(2, "0");
           casillareloj.textContent = `${hora}:${minutos}:${segundos}`;
         }, 1000);
       }
